@@ -62,8 +62,8 @@ public class ConferenceServiceImp implements ConferenceService{
 	public Page<Commite> getCommitePage(String desc,int startPage, int amount) {
 		// TODO Auto-generated method stub
 		Commite commite = new Commite();
-		Predicate p = commite.getName().equalsIgnoreCase("commite_1");
-		commiteRepository.findAll(arg0);
+		//Predicate p = commite.getName().equalsIgnoreCase("commite_1");
+		//commiteRepository.findAll(arg0);
 		
 		
 		Page<Commite> commitePage = commiteRepository.findByDescription(desc,  new PageRequest(startPage, amount, new Sort(Sort.Direction.ASC,"description")));
