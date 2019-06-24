@@ -1,5 +1,7 @@
 package org.me.controler;
 
+import java.util.ArrayList;
+
 import org.me.models.Commite;
 import org.me.services.ConferenceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +18,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping(value="/user")
 public class HomeControler {
 
 	@Autowired
 	ConferenceService conferenceSerive;
-	@GetMapping(value="/home/{id}"/*,produces={MediaType.APPLICATION_JSON_VALUE}*/)
+	@GetMapping(value="/home/{id}",produces={MediaType.APPLICATION_JSON_VALUE})
 	@ResponseStatus(code=HttpStatus.OK)
 	//@ResponseBody
 	
@@ -38,6 +40,7 @@ public class HomeControler {
 		System.out.println("selected Commite is "+c1.getDescription());
 		Page<Commite> page = conferenceSerive.getCommitePage("commite_1", 0, 10);
 		System.out.println("Page size is : "+page.getSize());
+		ArrayList<String> list = new ArrayList<String>();
 		return "welcome";
 	}
 	

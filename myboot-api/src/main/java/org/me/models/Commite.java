@@ -70,8 +70,8 @@ public class Commite {
 	public void setComite_mbr(List<MembreComite> comite_mbr) {
 		this.comite_mbr = comite_mbr;
 	}
-	@ManyToMany
-	@ElementCollection(fetch=FetchType.LAZY)
+	@ManyToMany(fetch=FetchType.LAZY)
+	//@ElementCollection(fetch=FetchType.LAZY)
 	@JoinTable(name="comite_mbr",joinColumns={@JoinColumn(name="id_comite")},
 	                             inverseJoinColumns = { @JoinColumn(name ="idmembre")} )
 	List <MembreComite> comite_mbr = new ArrayList();

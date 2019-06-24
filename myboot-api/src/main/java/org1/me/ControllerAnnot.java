@@ -1,5 +1,7 @@
 package org1.me;
 
+import org.apache.log4j.Logger;
+import org.me.AppConfig;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +22,9 @@ public class ControllerAnnot {
 	 
 	    @RequestMapping(value = "/helloagain", method = RequestMethod.GET)
 	    public String sayHelloAgain(ModelMap model) {
-	        model.addAttribute("greeting", "Hello World Again, from Spring 4 MVC");
+	    	Logger myLog =Logger.getLogger(AppConfig.class);
+	        myLog.debug("Creating view Resolver in Springbootapplication Config Class");
+	    	model.addAttribute("greeting", "Hello World Again, from Spring 4 MVC");
 	        System.out.println("coucou");
 	        return "you";
 	    }

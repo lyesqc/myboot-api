@@ -39,6 +39,7 @@ public class MVCconfigAn  extends WebMvcConfigurerAdapter
 	public void addViewControllers(ViewControllerRegistry registry) {
 	    registry.addViewController("/me").setViewName("you");
 	}
+	
 	    
 //	
 //	
